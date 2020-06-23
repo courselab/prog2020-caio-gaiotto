@@ -23,7 +23,24 @@
 
 int is_prime (int a)
 {
-  return 0;
+  int b;
+if (a==2)
+return 1;
+if(a==1)
+return 0;
+  for(b=2;b<a;b++)
+   {
+      if ((a%b) == 0)
+      {
+        printf("%d\n",b);
+        return 0;
+      }
+      if (b == a-1)
+      {
+        return 1;
+      } 
+    }
+
 }
 
 #define USAGE "m003 <num>\n"

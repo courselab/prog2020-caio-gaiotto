@@ -29,7 +29,16 @@
 
 int decimal (char *b)
 {
-  
+  int i;int n; n=7;
+  for (i=1;i<=n;i++)
+  {
+    if (b[i] != 0 && b[i] != 1)
+    {
+      printf ("b");
+      exit (1);
+    }
+  }
+  printf ("a");
   return 0;
 }
 
