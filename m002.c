@@ -27,7 +27,11 @@
 
 void sort (int *a, int *b, int *c)
 {
-  return 0;
+  int d;
+  if(*a>=*b,*b>=*c)
+  {
+    d=*c;*b=*b;a=&d;*c=*a;
+  }
 }
 
 /* Do not edit this function. */

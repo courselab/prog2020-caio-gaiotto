@@ -30,8 +30,39 @@
 
 void lastname (char *s)
 {
+  int i=0;int count=0;
+  while (s[i] != 0)
+  {
+    i++;
+  }
+  while(i>=0)
+  {
+    if(s[i]>='A' && s[i]<='Z')
+    {
+      break;
+    }
+    i--;count++;
+  }
+  while (s[i] != 0)
+  {
+    i++;
+  }
+  for(i=i;i>=0;i--)
+  {
+    s[(i+count+1)]=s[i];
+  }
+  s[count]=' ';s[count-1]=',';s[count+1]=s[0];
+  while (s[i] != 0)
+  {
+    i++;
+  }
+  int n=count;int m=i;
+  for(i=m;i<=m-count;i--)
+  {
+    s[n]=s[i];
+    n--;
+  }
 }
-
 
 
 /* Do not edit this function. */
