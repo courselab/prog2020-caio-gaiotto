@@ -25,19 +25,21 @@ int is_prime (int a)
 {
   int b;int g;
 if (a==2)
-g= 1;
+g=1;
 if(a==1)
-g= 0;
+g=0;
   for(b=2;b<a;b++)
    {
       if ((a%b) == 0)
       {
-        g= 0;
-        b=a-1;
+        g=0;
+        printf ("%d\n",b);
+        b=a;
       }
-      if (b == a-2)
+      if (b == a-1)
       {
         g= 1;
+        b=a;
       } 
     }
     return g;
