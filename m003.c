@@ -32,7 +32,6 @@ return 0;
    {
       if ((a%b) == 0)
       {
-        printf("%d\n",b);
         return 0;
       }
       if (b == a-1)
@@ -40,7 +39,6 @@ return 0;
         return 1;
       } 
     }
-
 }
 
 #define USAGE "m003 <num>\n"
