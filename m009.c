@@ -23,8 +23,27 @@
 
 /* Sort the first 'n' integers values in 'vector'. */
 
+void swap(int *x, int *y)
+  {
+    int k;
+    k=*x;
+    *x=*y;
+    *y=k;
+  } 
+
 void sort (int* vector, int n)
 {
+  int i,j;
+  for (j=0;j<100;j++)
+  {
+  for (i=0;i<n-1;i++)
+  {
+    if(vector[i]>=vector[i+1])
+    {
+      swap(&vector[i],&vector[i+1]);
+    }  
+  }
+  }
 }
 
 #define USAGE "m009 <num1> <nun2> ... \n"
