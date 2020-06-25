@@ -44,8 +44,9 @@ void lastname (char *s)
   }
   while(i>=0)
   {
-    if(s[i]>='A' && s[i]<='Z')
+    if(s[i]==32)
     {
+      count--;
       break;;
     }
     i--;count++;
@@ -76,7 +77,6 @@ for(n=n;n>=count;n--)
 }
 s[count-1]=t[1];s[count]=t[0];
 }
-
 
 /* Do not edit this function. */
 
