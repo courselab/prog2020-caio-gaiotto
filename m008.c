@@ -22,46 +22,59 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX 256
 
 /* Converts the string 's' from first-middle-last name 
    form into LAST-first-middle form. */
-
+void swap(char *x, char *y)
+  {
+   char *k = x; 
+    x = y; 
+    y = k;
+  } 
 void lastname (char *s)
 {
-  int i=0;int count=0;
+  int i=0,count=0,n=0;char t[MAX]; 
+  strcpy(t, s);
   while (s[i] != 0)
   {
-    i++;
+    i++;n=i;
   }
   while(i>=0)
   {
     if(s[i]>='A' && s[i]<='Z')
     {
-      break;
+      break;;
     }
     i--;count++;
   }
-  while (s[i] != 0)
+  int k=count;
+  for(i=n-1;i>=count;i--)
   {
-    i++;
+    t[i]=t[i-count];
   }
-  for(i=i;i>=0;i--)
+  i=0;
+  while(k>=0)
   {
-    s[(i+count+1)]=s[i];
+    if(s[n-k]>='a' && s[n-k]<='z')
+    {
+      t[i]=s[n-k]-32;
+    }
+    if(s[n-k]>='A' && s[n-k]<='Z')
+    {
+      t[i]=s[n-k];
+    }
+    k--;i++;
   }
-  s[count]=' ';s[count-1]=',';s[count+1]=s[0];
-  while (s[i] != 0)
-  {
-    i++;
-  }
-  int n=count;int m=i;
-  for(i=m;i<=m-count;i--)
-  {
-    s[n]=s[i];
-    n--;
-  }
+strcpy(s, t);
+t[0]=' ';t[1]=',';
+for(n=n;n>=count;n--)
+{
+  s[n]=s[n-1];
+}
+s[count-1]=t[1];s[count]=t[0];
 }
 
 
