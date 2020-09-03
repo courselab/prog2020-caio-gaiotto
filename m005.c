@@ -25,9 +25,35 @@
 
 /* Return the determinant of a 3x3 integer matrix.*/
 
-int determinant (int m[3][3])
+int determinant (int a[3][3])
 {
-  return 0;
+  int g=1;int j=1;int k=1;
+  int l=1;int m=1;int n=1;
+for(int i=0;i<3;i++)
+{
+  g=g*a[i][i];
+  if (i<2)
+  j=j*a[i][i+1];
+  if (i>0)
+  k=k*a[i][i-1];
+}
+  j=j*a[2][0];
+  k=k*a[0][2];
+int i=2; int b=0;
+while(b<3)
+{
+  l=l*a[i][b];
+  if(b<2)
+  m=m*a[b][i-1];
+  if(b>0)
+  n=n*a[b][i+1];
+  i--;b++;
+}
+m=m*a[2][2];
+n=n*a[0][0];
+
+  int x= g+j+k-l-m-n;
+return x;
 }
 
 

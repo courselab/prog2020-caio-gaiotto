@@ -14,7 +14,7 @@
 
    Directions:
 
-      Please, edit function lettercount();
+      Please, edit function lettercount()
       do no not change function main().
 
 */
@@ -28,7 +28,21 @@
 
 int lettercount (char *s)
 {
-  return 0;
+  int i;i=0;
+  int count; count=0;
+ while (s[i] != 0)
+ {
+   if(s[i]>='a' && s[i]<='z')
+   {
+     count ++;
+   }
+   if (s[i]>='A' && s[i]<='Z')
+   {
+     count  ++;
+   }    
+   i++;
+ }
+ return count;
 }
 
 

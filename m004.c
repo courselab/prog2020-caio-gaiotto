@@ -27,10 +27,39 @@
    right before the spurious character (eg. truncate 110x001
    into 110); an empty string means zero. */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* Return the value in decimal base of the string b, interpreted
+   as the a positive binary number. If the string contains any
+   characters other than '1's and '0's, truncate the string
+   right before the spurious character (eg. truncate 110x001
+   into 110); an empty string means zero. */
+
 int decimal (char *b)
-{
-  
-  return 0;
+{ 
+int n , value=0,i,k,j;
+ n = strlen(b);
+ for(i=n-1;i>=0;i--)
+ {
+   if( i== n-1)
+   {
+     value=value+b[i]-'0';
+   }
+   else
+   {
+     j=1;
+     for(k=1;k<n-i;k++)
+   {
+     j=j*(b[i]-'0')*2;
+   }
+   value=value+j;
+   }
+ }
+
+
+ return value;
 }
 
 #define USAGE "m004 <string>\n"

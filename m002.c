@@ -25,9 +25,49 @@
 
 /* Sort three integers x, y, z in ascending order.*/
 
+void swap(int *x, int *y)
+  {
+    int k;
+    k=*x;
+    *x=*y;
+    *y=k;
+  } 
 void sort (int *a, int *b, int *c)
 {
+  if(*a>=*b && *a>=*c)
+  {
+    if(*b>=*c)
+    {
+      swap(a,c);
+    }
+    else
+    {
+      swap(a,c);swap(a,b);
+    }
+  }
+  else
+  {
+    if(*b>=*c && *b>=*a)
+    {
+      if(*c>=*a)
+      {
+        swap(c,b);
+      }
+      else
+      {
+        swap(a,c);swap(b,c);
+      }
+    }
+    else
+    {
+      if(*a>=*b)
+      {
+        swap(a,b);
+      }
+    }
+  }
 }
+
 
 /* Do not edit this function. */
 
